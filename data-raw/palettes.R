@@ -15,3 +15,7 @@ usethis::use_data(brain_pals, internal = TRUE, overwrite = TRUE)
 dkextra <- mutate(dkextra, region = gsub("medial orbito frontal", "medial orbitofrontal", region))
 usethis::use_data(dkextra, internal = FALSE, overwrite = TRUE)
 
+devtools::load_all("../../ggsegExtra/")
+hcpa_3d <- restruct_old_3datlas(hcpa_3d)
+hcpa_3d <- as_ggseg3d_atlas(hcpa_3d)
+usethis::use_data(hcpa_3d, internal = FALSE, overwrite = TRUE)
