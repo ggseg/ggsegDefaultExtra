@@ -11,7 +11,7 @@ test_that("check new palettes work", {
   expect_error(brain_pal("hcpa"), "not a valid")
 
   # expect_true(all(names(brain_pal("hcpa", package = "ggsegDefaultExtra")) %in% dkextra$region))
-  expect_true(all(names(brain_pal("dk", package = "ggseg")) %in% dkextra$region))
+  expect_true(all(na.omit(dkextra$region[!dkextra$region %in% names(brain_pal("dk", package = "ggseg"))])))
 })
 
 context("test-ggseg-atlas")
