@@ -1,9 +1,4 @@
 # ggseg ----
-context("test-adapt_scales")
-test_that("Check that ggseg:::adapt_scales is working", {
-  expect_equal(mode(ggseg:::adapt_scales(unnest(dkextra, ggseg))), "list")
-})
-
 context("test-palettes")
 test_that("check new palettes work", {
   expect_equal(length(brain_pal("hcpa", package = "ggsegDefaultExtra")), 34)
@@ -17,7 +12,7 @@ test_that("check new palettes work", {
 context("test-ggseg-atlas")
 test_that("atlases are true ggseg atlases", {
 
-  expect_true(is_ggseg_atlas(dkextra))
+  expect_true(is_brain_atlas(dkextra))
 
 })
 
@@ -36,10 +31,7 @@ test_that("Check that polygon atlases are working", {
               scale_fill_brain("dk"),
             c("gg","ggplot"))
 
-  expect_warning(ggseg(atlas = dkextra, mapping=aes(fill=area),
-                  position="stacked"), "Cannot stack")
-
-  expect_is(ggseg(atlas = dkextra, mapping=aes(fill=area), adapt_scales = F ),c("gg","ggplot"))
+  expect_is(ggseg(atlas = dkextra, mapping=aes(fill=region), adapt_scales = F ),c("gg","ggplot"))
 
 })
 
