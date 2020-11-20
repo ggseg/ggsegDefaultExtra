@@ -11,6 +11,8 @@ status](https://travis-ci.org/LCBC-UiO/ggsegDefaultExtra.svg?branch=master)](htt
 status](https://ci.appveyor.com/api/projects/status/github/LCBC-UiO/ggsegDefaultExtra?branch=master&svg=true)](https://ci.appveyor.com/project/LCBC-UiO/ggsegDefaultExtra)
 [![Codecov test
 coverage](https://codecov.io/gh/LCBC-UiO/ggsegDefaultExtra/branch/master/graph/badge.svg)](https://codecov.io/gh/LCBC-UiO/ggsegDefaultExtra?branch=master)
+[![R build
+status](https://github.com/LCBC-UiO/ggsegDefaultExtra/workflows/R-CMD-check/badge.svg)](https://github.com/LCBC-UiO/ggsegDefaultExtra/actions)
 <!-- badges: end -->
 
 This package contains dataset for plotting the extra datasets based on
@@ -42,6 +44,7 @@ library(ggsegDefaultExtra)
 
 ``` r
 library(ggseg)
+#> Loading required package: ggplot2
 
 plot(dkextra) +
   theme(legend.position = "bottom",
@@ -53,6 +56,7 @@ plot(dkextra) +
 
 ``` r
 library(ggseg3d)
+library(dplyr)
 
 ggseg3d(atlas = hcpa_3d) %>% 
   add_glassbrain("left") %>% 
