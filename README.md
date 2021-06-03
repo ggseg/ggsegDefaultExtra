@@ -1,14 +1,11 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# ggsegDefaultExtra
+# ggsegDefaultExtra <img src='man/figures/logo.png' align="right" height="138.5" />
 
 <!-- badges: start -->
 
-[![Travis build
-status](https://travis-ci.org/LCBC-UiO/ggsegDefaultExtra.svg?branch=master)](https://travis-ci.org/LCBC-UiO/ggsegDefaultExtra)
-[![AppVeyor build
-status](https://ci.appveyor.com/api/projects/status/github/LCBC-UiO/ggsegDefaultExtra?branch=master&svg=true)](https://ci.appveyor.com/project/LCBC-UiO/ggsegDefaultExtra)
+[![DOI](https://zenodo.org/badge/250292657.svg)](https://zenodo.org/badge/latestdoi/250292657)
 [![Codecov test
 coverage](https://codecov.io/gh/LCBC-UiO/ggsegDefaultExtra/branch/master/graph/badge.svg)](https://codecov.io/gh/LCBC-UiO/ggsegDefaultExtra?branch=master)
 [![R build
@@ -25,6 +22,19 @@ brain for the dk-atlas
 hippocampus into anterior and posterior parts
 
 ## Installation
+
+We recommend installing the ggseg-atlases through the ggseg
+[r-universe](https://ggseg.r-universe.dev/ui#builds):
+
+``` r
+# Enable this universe
+options(repos = c(
+    ggseg = 'https://ggseg.r-universe.dev',
+    CRAN = 'https://cloud.r-project.org'))
+
+# Install some packages
+install.packages('ggsegDefaultExtra')
+```
 
 You can install the released version of ggsegDefaultExtra from
 [GitHub](https://github.com/) with:
@@ -44,7 +54,7 @@ library(ggsegDefaultExtra)
 
 ``` r
 library(ggseg)
-#> Loading required package: ggplot2
+library(ggplot2)
 
 plot(dkextra) +
   theme(legend.position = "bottom",
@@ -52,7 +62,7 @@ plot(dkextra) +
   guides(fill = guide_legend(ncol = 3))
 ```
 
-<img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
 
 ``` r
 library(ggseg3d)
